@@ -7,14 +7,14 @@ class Solution {
   public:
     long long reversedBits(long long X) {
         // code here
-         long rev =0; long rem=0; int k=1;
-       while(k<=32){
-           rem=X%2;
-           rev=rev*2+rem;
-           X=X/2;
-           k++;
-       }
-       return rev;
+        long res=0;int pow=31;
+        while(X!=0){
+            res=res+((X&1)<<pow);
+           X= X>>1;
+            pow--;
+            
+        }
+        return res;
     }
 };
 
