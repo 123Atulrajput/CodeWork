@@ -9,15 +9,17 @@ class Solution
     string reverseWords (string s)
     {
         //code here.
-         int i=0;
-    for (int j=0;j<s.size();j++){
-        if(s[j]=='.'){
-        reverse(s.begin()+i,s.begin()+j);
-            i=j+1; }
-        
-    }
-      reverse(s.begin()+i,s.end());
-    return s ;
+        int j=0;
+        for(int i=0;i<s.size();i++){
+            if(s[i]=='.'){
+                reverse(s.begin()+j,s.begin()+i); 
+            
+            j=i+1;
+            }
+            
+        }
+        reverse(s.begin()+j,s.end());
+        return s;
     }
 };
 
