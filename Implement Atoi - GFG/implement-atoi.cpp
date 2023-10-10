@@ -11,23 +11,27 @@ class Solution{
   public:
     /*You are required to complete this method */
     int atoi(string str) {
-        //Your code here
-         int ans=0, start=0;
-       if (str[0]=='-'){
-           start=1;
-       }
-       for (int i=start; i<str.size(); i++){
-           if (str[i]>='0' && str[i]<='9'){
-               ans=ans*10+(str[i]-'0');
-           }
-           else{
-               return -1;
-           }
-       }
-       if (str[0]=='-'){
-           return -ans;
-       }
-       return ans;
+        //Your co"de here
+        int s=0 ;  int start=0;
+        if(str[0]=='-'){
+            start=1;
+        }
+        
+        for( int i=start;i<str.size();i++){
+            if(str[i]>='0'&&str[i]<='9'){
+                s=s*10+(str[i]-'0');
+            
+            }
+            else{
+                return -1;
+            }
+            
+        }
+        if(str[0]=='-'){
+            return -s;
+            }   
+            return s ;
+        
     }
 };
 
