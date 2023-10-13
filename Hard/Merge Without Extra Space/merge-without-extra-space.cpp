@@ -10,41 +10,24 @@ class Solution{
         void merge(long long arr1[], long long arr2[], int n, int m) 
         { 
             // code here 
-            int left =0;
+            int left=n-1;
             int right=0;
-            int arr3[n+m];
-            int i =0;
             
-             while(left<n&&right<m){
-                 if(arr1[left]<=arr2[right]){
-                 
-                 arr3[i]=arr1[left];
-                 i++;
-                 left++;
-                 }
-                 else if(arr1[left]>arr2[right]){
-                     arr3[i]=arr2[right];
-                     i++;
-                     right++;
-                 }
-             }
-             while(left<n){
-                 arr3[i]=arr1[left];
-                 i++;left++;
-             }
-               while(right<m){
-                 arr3[i]=arr2[right];
-                 i++;right++;
-             }
-             for(int i=0;i<n+m;i++){
-                 if(i<n){
-                 arr1[i]=arr3[i];
-                 }
-                 else{
-                     arr2[i-n]=arr3[i];
-                 }
-             }
-             
+            while(left>=0&&right<=m-1){
+                
+                if(arr1[left]>arr2[right]){
+                    swap(arr1[left], arr2[right]);
+                    left--;right++;
+
+                }
+                
+                if(arr1[left]<=arr2[right]){
+                    right++;left--;
+                }
+            }
+            
+            sort(arr1,arr1+n);sort(arr2,arr2+m);
+            
         } 
 };
 
