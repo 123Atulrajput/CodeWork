@@ -44,16 +44,17 @@ class Solution
     Node * removeDuplicates( Node *head) 
     {
      // your code goes here
-     
  unordered_map<int , int >mp;
      Node*curr=head;
      mp[curr->data]=1;
+     
      while(curr->next!=NULL){
          if(mp.count(curr->next->data)){
              curr->next=curr->next->next;
 
          }
-         else{
+         
+         else{// upper nicche krdo ge toh frak padjayega ans pe 
              curr=curr->next;
              mp[curr->data]=1;
             
